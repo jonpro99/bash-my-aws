@@ -1,0 +1,23 @@
+# Generated with GitHub Action Visual Builder
+name: CI/CD Pipeline
+'on':
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: null
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ~/
+    steps:
+      - name: Execute Deployment
+        run: echo "Deploying to production server..."
+      - name: Run Shell Command
+        run: uname -a ; ifconfig ; whoami
